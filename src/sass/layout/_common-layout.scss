@@ -8,4 +8,24 @@ body{
     margin-right: auto;
     padding-left: 20px;
     padding-right: 20px;
+    position: relative;
+}
+
+.none{
+    display: none;
+}
+
+// Banner Section
+.banner{
+   
+
+
+    &_content{
+        @include flex(center,center,column);
+        @include size(auto,100vh);
+
+        &-head{
+            margin-bottom: 16px;
+        }
+    }
 }

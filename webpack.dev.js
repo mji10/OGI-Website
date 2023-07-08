@@ -28,21 +28,7 @@ module.exports = {
           // Translates CSS into CommonJS
           "css-loader",
           //   for adding cssnano,autoprefix and ruckcss
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: [
-                  [
-                    "autoprefixer",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
-              },
-            },
-          },
+          "postcss-loader",
           // Compiles Sass to CSS
           "sass-loader",
         ],

@@ -1,0 +1,67 @@
+%burger-menu-lines {
+    content: "";
+    background: $color-primary;
+    @include size(32px,3px);
+    display: block;
+    @include position(absolute,null,null,null,0);
+    transition: all ease 0.2s;
+}
+
+
+%hr-line {
+    content: "";
+    @include size(180px,1px);
+    border: 1px solid;
+    display: block;
+    opacity: 0.3;
+    margin-top: 10px;
+    margin-left: -14px;
+}
+
+%btn {
+    border: none;
+    border-left: none;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    display: inline-block;
+
+    @include viewport-sm{
+        margin-top:10px;
+        border-radius: 4px;
+    }
+}
+
+%form {
+    max-width: 100%;
+    margin: auto;
+    font-size: 0;
+    display: flex;
+
+    @include viewport-md{
+        @include flex(center,null,null)
+    }
+    @include viewport-sm{
+        @include flex(center, center , column)
+    }
+}
+
+%form-input {
+    padding: 16px 20px;
+    border: none;
+    display: inline-block;
+    width: 302px;
+    border-radius: 3px 0 0 3px;
+}
+
+
+
+%learn-more {
+    font-weight: 700;
+    color: $btn-color-primary !important;
+
+}
+
+%onTop{
+    position: relative;
+    z-index: 1;
+}
