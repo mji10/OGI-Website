@@ -65,3 +65,29 @@
     position: relative;
     z-index: 1;
 }
+
+// Section placeholder
+
+%section-bg{
+    background-color:$color-primary;
+    min-height: 700px;
+    @include flex(center,center,null);
+    position: relative;
+
+    .heading{
+        margin-bottom:55px
+    }
+
+    .content{
+        max-width: 40%
+    }
+
+    @include viewport-sm{
+        @include flex(space-around,center,column);
+
+        .content{
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+}

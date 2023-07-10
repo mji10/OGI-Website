@@ -149,7 +149,12 @@
   // Scroll Background
   .nav-active {
     background-color: $color-primary;
+    color:$color-secondary;
     transition: 0.2s ease-in-out;
     position: fixed;
     z-index: 3;
+}
+
+.nav-active .nav_main-list--items .nav-links{
+    color:$color-secondary;
 }

@@ -12,7 +12,7 @@
         }
     }
 
-    &-sm{
+    &-sm-primary{
         @include font($heading-sm,$color-primary,normal);
 
         @include viewport-md{
@@ -21,7 +21,21 @@
         }
 
         @include viewport-sm{
+            @include font($heading-sm,null,null);
+            text-align: center;
+        }
+    }
+
+    &-sm-secondary{
+        @include font($heading-sm,$color-secondary,normal);
+
+        @include viewport-md{
             @include font($txt-lg,null,null);
+            text-align: center;
+        }
+
+        @include viewport-sm{
+            @include font($heading-sm,null,null);
             text-align: center;
         }
     }
@@ -33,6 +47,11 @@
     }
     &-lg{
         @include font($txt-lg,$color-primary,null);
+
+        @include viewport-sm{
+            @include font($txt-md,$color-primary,null);
+            font-weight: bold;
+        }
     }
     &-md{
         @include font($txt-md,$color-primary,null);
@@ -45,5 +64,11 @@
     }
     &-sm{
         @include font($txt-sm,$color-secondary,null);
+        line-height: 25px;
+    }
+
+    &-sm-medium-grey{
+        @include font($txt-sm,$color-medium-grey,null);
+        line-height: 26px;
     }
 }
