@@ -1,8 +1,8 @@
-body{
+body {
     font-family: proximaNova;
 }
 
-.container{
+.container {
     max-width: 1160px;
     margin-left: auto;
     margin-right: auto;
@@ -12,91 +12,85 @@ body{
     width: 100%;
 }
 
-.none{
-    display: none;
+.no_scroll{
+    overflow-y: hidden;
 }
 
+
 // Banner Section
-.banner{
-   
+.banner {
+    height: 100vh;
+    &_fixed{
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    &_content {
+        @include flex(center, center, column);
+        @include size(auto, 100vh);
 
-
-    &_content{
-        @include flex(center,center,column);
-        @include size(auto,100vh);
-
-        &-head{
+        &-head {
             margin-bottom: 16px;
+        }
+
+        &-para{
+            opacity: 0;
+            animation: 5s textShow 2s ease-in 1;
+            animation-fill-mode: forwards;
+            // animation-duration:5s
         }
     }
 }
+
 [data-animate] {
     opacity: 0;
     will-change: auto;
-  }
-  
-  .animated {
+}
+
+.animated {
     transition: all 1s cubic-bezier(0.57, 0.08, 0.9, 0.36);
     opacity: 1;
-  }
+}
 
 //   About us
-.about{
-   @extend %section-bg;
+.about {
+    @extend %onTop;
+    @extend %section-bg;
 
-   &_content{
-
-    max-width: 40%;
-
-    &-text{
-        color:$color-secondary;
+    &-text {
+        color: $color-secondary;
     }
-
-    &-img{
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 50%;
-        object-fit: cover;
-        opacity: 0;
-
-        @include viewport-sm{
-            position:static;
-            width: 100%;
-            height: 100%;
-        }
-    }
-   
-   }
-   &_head{
-    margin-bottom:55px
-   }
 }
 
 
 // Services Section
-.services{
-    background-color:$color-light-grey;
+.services {
+    @extend %onTop;
     padding: 140px 0;
 
-    &_head{
+    &_head {
         text-align: center;
-        margin-bottom:80px;
+        margin-bottom: 80px;
     }
 
-    &_wrapper{
+    &_wrapper {
         display: flex;
         width: 100%;
         justify-content: space-around;
         flex-wrap: wrap;
     }
 
-    &_list{
+    &_list {
         width: calc((100% / 3) - 45px);
         margin-bottom: 70px;
 
-        &-head{
-            margin:20px 0 16px 0;
+        &-img {
+            opacity: 0;
+        }
+
+        &-head {
+            margin: 20px 0 16px 0;
         }
 
 
@@ -105,118 +99,137 @@ body{
         }
 
 
-        @include viewport-sm{
+        @include viewport-sm {
             width: 100%;
             margin-bottom: 70px !important;
 
-            &:last-child{
+            &:last-child {
                 margin-bottom: 0 !important;
             }
         }
     }
+
+    @include viewport-sm {
+        padding: 70px 0;
+    }
 }
 
-// We Hiring
-// .hiring{
-//     background-color:$color-primary;
-//     min-height: 700px;
-//     @include flex(center,center,null);
-//     position: relative;
- 
-//     &_content{
- 
-//      max-width: 40%;
- 
-//      &-text{
-//          color:$color-secondary;
-//      }
- 
-//      &-img{
-//          position: absolute;
-//          top: 0;
-//          right: 0;
-//          width: 50%;
-//          object-fit: cover;
-//      }
-    
-//     }
-//     &_head{
-//      margin-bottom:55px
-//     }
-//  }
-
-.hiring{
+.hiring {
+    @extend %onTop;
     @extend %section-bg;
 
-    &_content{
-        max-width: 40%;
-        display: flex;
-        /* justify-content: flex-end; */
-        margin-left: auto;
-    }
-
-    &_content-img{
-       @include position(absolute,0,null,null,0);
-       @include size(50%,null);
-       object-fit: cover;
-       opacity: 0;
+    &_content-img {
+        @include position(absolute, 0, null, null, 0);
     }
 }
 
 // Contact us
-.contact{
+.contact {
+    @extend %onTop;
     @extend %section-bg;
 
-    &_content{
-        max-width: 40%;
-    }
-
-    .form{
-        display: flex;
-        flex-direction: column;
-        position: relative;
-
-        &-control{
-            background-color: transparent;
-            border: 0;
-            outline: 0;
-            border-bottom:2px solid $color-secondary;
-            padding: 5px;
-            margin-bottom: 20px;
-            caret-color: $color-secondary;
-            color: $color-secondary;
-
-            ::placeholder{
-                color: $color-secondary;
-            }
-        }
-
-        &-btn{
-            padding: 10px 46px;
-            border: none;
-            background-color: #c71222;
-            border-radius: 100px;
-            max-width: 50%;
-            position: absolute;
-            bottom:20px;
-            right: 0;
-        }
-    }
-
-
-
-    iframe{
+    .map-responsive {
         position: absolute;
         top: 0;
         right: 0;
         opacity: 0;
+        width: 50%;
+        height: 700px;
+
+        @include viewport-sm {
+            position: static;
+            width: 100%;
+            height: 500px;
+        }
     }
 }
-.contact iframe.fadeIn{
+
+.contact iframe.fadeIn {
     opacity: 1;
     transition: all 0.5s ease-in-out;
 }
-.fadeIn{
-    opacity: 1;
+
+.fadeIn {
+    opacity: 1 !important;
     transition: all 0.5s ease-in-out;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+
+// Animation
+@keyframes textShow{from { opacity:0; } to { opacity:1; } }
+
+
+
+// Timeline
+.timeline{
+    @extend %onTop;
+    &_wrapper{
+        display: flex;
+    }
+
+    &_history{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+
+        &-left{
+
+            position: relative;
+            margin-right:13px;
+            margin-top: 150px;
+
+            .dates{
+                position: relative;
+                margin-bottom: 50px;
+                &::after{
+                    content:"";
+                    display: inline-block;
+                    width: 17px;
+                    height: 17px;
+                    background: $color-secondary;
+                    border-radius:50%;
+                    position: absolute;
+                    top: 0px;
+                    right: -23px;
+                    border: solid 4px #d4d4d4;
+                    outline: 4px solid white;
+                    
+                   
+                }
+            }
+
+        }
+
+        &-right{
+            margin-left: 13px;
+            margin-top: 150px;
+
+            .events{
+                position: relative;
+                margin-bottom: 50px;
+            }
+        }
+
+        span{
+            display: inline-block;
+            width: 4px;
+            height: auto;
+            background: #d4d4d4;
+        }
+    }
+
+    padding-bottom: 150px;
+}
+
+.active{
+    p{
+        color: $color-red;
+    }
+    &::after{
+        border: solid 4px $color-red !important;
+    }
+    
 }

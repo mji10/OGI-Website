@@ -2,13 +2,16 @@
     position: fixed;
     @include size(100%,70px);
     z-index: 2;
-    background-color: aliceblue
 }
 
 
 .brand {
     @include flex(space-between,center,null);
     min-height: 70px;
+
+    &_logo{
+        text-decoration: none;
+    }
 }
 
 .nav_main {
@@ -25,23 +28,12 @@
                 padding: 10px 20px;
                 color: $color-primary;
                 text-decoration: none;
+                font-weight: normal;
 
-
-                &::before {
-                    transition: 300ms;
-                    content: "";
-                    // background-color: $color-cyan;
-                    @include size(0%,5px);
-                    @include position(absolute,38px,null,null,null)
-                }
-
-                &:hover::before {
-                    width: 60%;
-                }
-
-                &:not(:only-child):after {
-                    padding-left: 4px;
-                    content: ' ▾';
+                &:hover {
+                    color: $color-red;
+                    transition:all 1s ease-in-out;
+                    
                 }
 
             }
@@ -58,14 +50,13 @@
 
 .burger_menu{
     cursor: pointer;
-    padding: 30px 20px;
     background: transparent;
     border: 0;
     display: none;
 
     &-lines{
             background: $color-primary;
-            @include size(32px,3px);
+            @include size(32px,4px);
             display: block;
             position: relative;
             transition: all ease 0.1s;
@@ -153,8 +144,24 @@
     transition: 0.2s ease-in-out;
     position: fixed;
     z-index: 3;
-}
 
-.nav-active .nav_main-list--items .nav-links{
-    color:$color-secondary;
+    .nav_main-list--items .nav-links{
+        color:$color-secondary;
+
+        &:hover{
+            color: $color-red;
+        }
+    }
+
+    .burger_menu-lines{
+        background-color:$color-secondary;
+    
+        &::before,&::after{
+            background-color:$color-secondary; 
+        }
+    }
+
+    .brand_logo{
+        color:$color-secondary;
+    }
 }

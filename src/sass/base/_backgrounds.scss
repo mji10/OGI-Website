@@ -1,0 +1,14 @@
+.bc{
+
+    &_primary{
+        background-color: $color-primary;
+    }
+
+    &_secondary{
+        background-color: $color-secondary;
+    }
+
+    &_tertiary{
+        background-color: $color-light-grey;
+    }
+}

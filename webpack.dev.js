@@ -40,7 +40,6 @@ module.exports = {
         type: "asset/resource",
       },
 
-      // Loading fonts
       {
         test: /\.html$/,
         use: ["html-loader"],
@@ -60,6 +59,6 @@ module.exports = {
   output: {
     filename: "js/main.js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "images/[hash][ext][query]",
+    assetModuleFilename: "images/[name][ext]",
   },
 };

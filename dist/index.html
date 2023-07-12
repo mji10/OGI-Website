@@ -11,7 +11,7 @@
     <header class="navigation">
         <div class="container">
             <div class="brand">
-                <a href="javascript:void(0)">Company Name</a>
+                <a href="javascript:void(0)" class="brand_logo txt-lg">Company Name</a>
                 <nav class="nav_main">
                     <button class="burger_menu"><span class="burger_menu-lines"></span></button>
                     <ul class="nav_main-list nav-desk">
@@ -48,23 +48,21 @@
     </header>
     <main>
         <section class="banner">
-            <div class="container">
-                <div class="banner_content">
-                    <h1 class="banner_content-head heading-lg" id="heading">WELCOME TO FREE SKETCH TEMPLATE</h1>
-                    <p class="banner_content-para txt-xl">Habitasse vestibulum a mi odio ut rutrum mauris leo lorem</p>
+            <div class="banner_fixed">
+                <div class="container">
+                    <div class="banner_content">
+                        <h1 class="banner_content-head heading-lg" id="heading">WELCOME TO FREE SKETCH TEMPLATE</h1>
+                        <p class="banner_content-para txt-xl" id="sub-heading">Habitasse vestibulum a mi odio ut rutrum
+                            mauris leo lorem</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="timeline">
-            <div class="container"></div>
-        </section>
-
-        <section class="about">
+        <section class="about bc_primary bgLazy">
             <div class="container">
                 <div class="content">
-                    <!-- <div class="about_content-text"> -->
-                    <h2 class="about_head heading-sm-secondary">About Us</h2>
+                    <h2 class="about_head heading-sm-secondary heading">About Us</h2>
                     <p class="txt-sm">A posuere scelerisque gravida facilisi parturient magna urna donec parturient
                         per augue a
                         amet quam nullam a ad a. Parturient velit imperdiet in suspendisse eget a parturient
@@ -74,84 +72,131 @@
                         <br>
                         Porta at at suspendisse dolor fames ullamcorper cum id per suspendisse a dignissim eu
                         dapibus platea turpis augue mi proin lorem morbi sapien facilisis lectus.</p>
-                    <!-- </div> -->
                 </div>
             </div>
-            <picture>
-                <img src="images/c79b02a6a1e4ae257f0f.jpg" alt="about-us-image" width="100%" height="100%"
-                    class="about_content-img lazy" data-src="images/about.jpg"
-                    data-srcset="images/about@2x.jpg 2x, images/about@1x.jpg 1x">
-            </picture>
+            <img data-src="images\about.jpg" data-srcset="images\about.jpg 1x,
+                        images\about@2x.jpg 2x,
+                        images\about@3x.jpg 3x" class="img" alt="about-us-image" />
+
         </section>
 
-        <section class="services">
+        <section class="timeline">
             <div class="container">
-                <h2 class="heading-sm-primary services_head">Our Services</h2>
-                <ul class="services_wrapper">
-                    <li class="services_list">
-                        <img src="images/0b006c94d8d1e36b2d44.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                    <li class="services_list">
-                        <img src="images/2857778d95edf5876631.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                    <li class="services_list">
-                        <img src="images/e252c0659010254f743b.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                    <li class="services_list">
-                        <img src="images/32ab1cad964ec6c6fcc8.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                    <li class="services_list">
-                        <img src="images/66a143ef8c83e5c17709.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                    <li class="services_list">
-                        <img src="images/93924c514246db1c40f7.svg" alt="" width="40" height="40">
-                        <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
-                        <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur hac
-                            felis
-                            vestibulum urna velit
-                            parturient
-                            suspendisse a ad lacus mauris</p>
-                    </li>
-                </ul>
+                <div class="timeline_wrapper">
+                    <div class="timeline_history">
+                        <ul class="timeline_history-left">
+                            <li class="dates active">
+                                <p>2003</p>
+                            </li>
+                            <li class="dates">
+                                <p>2006</p>
+                            </li>
+                            <li class="dates">
+                                <p>2010</p>
+                            </li>
+                            <li class="dates">
+                                <p>2016</p>
+                            </li>
+                        </ul>
+                        <span></span>
+                        <ul class="timeline_history-right">
+                            <li class="events">Started</li>
+                            <li class="events">Important Date One</li>
+                            <li class="events">Important Date Two</li>
+                            <li class="events">Current Time</li>
+                        </ul>
+                    </div>
+                    <div class="timeline_text"></div>
+                </div>
             </div>
         </section>
 
-        <section class="hiring">
+
+        <section class="services bc_tertiary">
+            <div class="container">
+                <div class="bgLazy">
+                    <h2 class="heading-sm-primary services_head">Our Services</h2>
+                    <ul class="services_wrapper">
+                        <li class="services_list">
+                            <img data-src="images\wallet.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                        <li class="services_list">
+                            <img data-src="images\smile.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                        <li class="services_list">
+                            <img data-src="images\hearth.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                        <li class="services_list">
+                            <img data-src="images\rocket.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                        <li class="services_list">
+                            <img data-src="images\joystick.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                        <li class="services_list">
+                            <img data-src="images\phone.svg" alt="" width="40" height="40"
+                                class="services_list-img lazy">
+                            <h3 class="txt-lg services_list-head">Consectetur vestibulum</h3>
+                            <p class="txt-sm-medium-grey services_list-text">Consectetur vestibulum maecenas curabitur
+                                hac
+                                felis
+                                vestibulum urna velit
+                                parturient
+                                suspendisse a ad lacus mauris</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="hiring bc_primary bgLazy">
             <picture>
-                <img src="images/4ce8c7196f7298d1a16a.jpg" alt="" width="100%" height="100%" class="hiring_content-img lazy">
+                <!-- <img src="images/hiring.jpg" alt="" width="100%" height="100%" class="hiring_content-img lazy img"> -->
+                <img data-src="images/hiring.jpg" data-srcset="images/hiring.jpg 1x,
+                        images\hiring@2x.jpg 2x,
+                        images\hiring@3x.jpg 3x" class="img hiring_content-img" alt="about-us-image" />
             </picture>
             <div class="container">
-                <div class="hiring_content">
+                <div class="hiring_content content ml-auto">
                     <div class="hiring_content-text">
                         <h2 class="hiring_head heading-sm-secondary heading">We're Hiring</h2>
                         <p class="txt-sm">A posuere scelerisque gravida facilisi parturient magna urna donec parturient
@@ -167,9 +212,9 @@
             </div>
         </section>
 
-        <section class="contact">
+        <section class="contact bc_primary bgLazy">
             <div class="container">
-                <div class="contact_content">
+                <div class="contact_content content">
                     <div class="hiring_content-text">
                         <h2 class="hiring_head heading-sm-secondary heading">Contact Us</h2>
                         <form action="javascript:void(0)" class="form">
@@ -183,9 +228,9 @@
                 </div>
             </div>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.134421344355!2d80.246061!3d12.985688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d63755621af%3A0x9ad72f78a113f1da!2sFull%20Creative!5e0!3m2!1sen!2sin!4v1688981113784!5m2!1sen!2sin"
-                width="50%" height="700" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade" class="lazy"></iframe>
+                data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.134421344355!2d80.246061!3d12.985688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d63755621af%3A0x9ad72f78a113f1da!2sFull%20Creative!5e0!3m2!1sen!2sin!4v1688981113784!5m2!1sen!2sin"
+                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                class="lazy map-responsive"></iframe>
         </section>
     </main>
 </body>

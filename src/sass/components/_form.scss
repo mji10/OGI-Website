@@ -1,0 +1,46 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &-control{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        border-bottom:2px solid $color-secondary;
+        padding: 5px;
+        margin-bottom: 20px;
+        caret-color: $color-secondary;
+        color: $color-secondary;
+
+        &::placeholder{
+            color: $color-secondary;
+        }
+
+        &:focus::placeholder{
+            color: transparent;
+        }
+    }
+
+    &-btn{
+        padding: 10px 46px;
+        border: none;
+        background-color: $color-red;
+        border-radius: 100px;
+        max-width: 50%;
+        position: absolute;
+        bottom:30px;
+        right: 0;
+        transition: all 0.5s ease-in-out;
+
+        &:hover{
+            cursor: pointer;
+            background-color:$color-secondary;
+            color: $color-red;
+        }
+
+        @include viewport-md{
+            max-width: 70%;
+        }
+    }
+}
