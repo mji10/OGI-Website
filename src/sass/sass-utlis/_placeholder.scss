@@ -19,7 +19,7 @@
     min-height: 700px;
     @include flex(center,center,null);
     position: relative;
-    opacity: 0;
+    // opacity: 0;
 
     .heading{
         margin-bottom:55px
@@ -50,7 +50,12 @@
     }
 
     @include viewport-sm{
-        @include flex(space-around,center,column);
+        min-height: 620px;
+        @include flex(space-between,center,column);
+
+        .heading{
+            margin: 28px 0;
+        }
 
         .content{
             max-width: 100%;

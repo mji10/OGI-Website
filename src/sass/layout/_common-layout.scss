@@ -72,6 +72,10 @@ body {
     &_head {
         text-align: center;
         margin-bottom: 80px;
+
+        @include viewport-sm{
+            margin-bottom: 40px;
+        }
     }
 
     &_wrapper {
@@ -101,7 +105,7 @@ body {
 
         @include viewport-sm {
             width: 100%;
-            margin-bottom: 70px !important;
+            margin-bottom: 35px !important;
 
             &:last-child {
                 margin-bottom: 0 !important;
@@ -200,6 +204,8 @@ body {
                    
                 }
             }
+
+            .last{}
 
         }
 

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>OGI Website</title>
 </head>
 
 <body>
@@ -80,7 +80,7 @@
 
         </section>
 
-        <section class="timeline">
+        <section class="timeline bc_secondary">
             <div class="container">
                 <div class="timeline_wrapper">
                     <div class="timeline_history">
@@ -94,7 +94,7 @@
                             <li class="dates">
                                 <p>2010</p>
                             </li>
-                            <li class="dates">
+                            <li class="dates last">
                                 <p>2016</p>
                             </li>
                         </ul>
@@ -188,13 +188,11 @@
             </div>
         </section>
 
-        <section class="hiring bc_primary bgLazy">
-            <picture>
-                <!-- <img src="images/hiring.jpg" alt="" width="100%" height="100%" class="hiring_content-img lazy img"> -->
-                <img data-src="images/hiring.jpg" data-srcset="images/hiring.jpg 1x,
+        <section class="hiring bc_primary">
+            <!-- <img src="images/hiring.jpg" alt="" width="100%" height="100%" class="hiring_content-img lazy img"> -->
+            <img data-src="images/hiring.jpg" data-srcset="images/hiring.jpg 1x,
                         images\hiring@2x.jpg 2x,
                         images\hiring@3x.jpg 3x" class="img hiring_content-img" alt="about-us-image" />
-            </picture>
             <div class="container">
                 <div class="hiring_content content ml-auto">
                     <div class="hiring_content-text">
@@ -212,16 +210,25 @@
             </div>
         </section>
 
-        <section class="contact bc_primary bgLazy">
+        <section class="contact bc_primary">
             <div class="container">
                 <div class="contact_content content">
                     <div class="hiring_content-text">
                         <h2 class="hiring_head heading-sm-secondary heading">Contact Us</h2>
                         <form action="javascript:void(0)" class="form">
-                            <input type="text" placeholder="Name" class="form-control txt-sm-secondary">
-                            <input type="text" placeholder="Email" class="form-control txt-sm-secondary">
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Message"
-                                class="form-control"></textarea>
+                            <div class="form-group txt-sm-secondary">
+                                <input type="text" required />
+                                <label>Name</label>
+                            </div>
+                            <div class="form-group txt-sm-secondary">
+                                <input type="text" required />
+                                <label>Email</label>
+                            </div>
+                            <div class="form-group txt-sm-secondary">
+                                <textarea cols="30" rows="10" required></textarea>
+                                <label>Message</label>
+                            </div>
+
                             <button class="form-btn txt-sm">Contact us</button>
                         </form>
                     </div>
@@ -229,7 +236,7 @@
             </div>
             <iframe
                 data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.134421344355!2d80.246061!3d12.985688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d63755621af%3A0x9ad72f78a113f1da!2sFull%20Creative!5e0!3m2!1sen!2sin!4v1688981113784!5m2!1sen!2sin"
-                style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
                 class="lazy map-responsive"></iframe>
         </section>
     </main>

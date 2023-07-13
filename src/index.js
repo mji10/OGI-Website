@@ -55,81 +55,31 @@ function headAni() {
 }
 
 function lazyLoad() {
-  const bg = document.querySelectorAll("[data-src]");
-  // const lazyImages = document.querySelectorAll(".lazy");
-  console.log(bg);
+  const images = document.querySelectorAll("[data-src]");
+  const imageObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          preloadImage(entry.target);
+          entry.target.classList.add("fadeIn");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
 
-  // console.log(lazyImages);
+  images.forEach((image) => {
+    imageObserver.observe(image);
+  });
 
-  const appear = [...bg];
-
-  console.log(appear);
-  // console.log(appear);
-  const appearImage = {
-    threshold: 0.5,
-  };
-
-  function preloadImages(img) {
+  function preloadImage(img) {
     const src = img.getAttribute("data-src");
-
     if (!src) {
       return;
     }
-
     img.src = src;
   }
-
-  const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        preloadImages(entry.target);
-        entry.target.classList.add("fadeIn");
-        // debugger;
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  }, appearImage);
-
-  bg.forEach((fade) => {
-    appearOnScroll.observe(fade);
-  });
-}
-
-function lazyBgLoad() {
-  const bg = document.querySelectorAll(".bgLazy");
-  console.log(bg);
-
-  // console.log(lazyImages);
-
-  const appear = [...bg];
-
-  console.log(appear);
-  console.log(appear);
-  const appearImage = {
-    threshold: 0.5,
-  };
-
-  const appearOnScroll = new IntersectionObserver(function (
-    entries,
-    appearOnScroll
-  ) {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        return;
-      } else {
-        entry.target.classList.add("fadeIn");
-        // debugger;
-        appearOnScroll.unobserve(entry.target);
-      }
-    });
-  },
-  appearImage);
-
-  appear.forEach((fade) => {
-    appearOnScroll.observe(fade);
-  });
 }
 
 window.addEventListener("load", function () {
@@ -137,5 +87,4 @@ window.addEventListener("load", function () {
   burgerMenu();
   headAni();
   lazyLoad();
-  lazyBgLoad();
 });

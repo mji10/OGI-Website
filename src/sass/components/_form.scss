@@ -1,45 +1,70 @@
-.form{
+// Form with animation
+.form {
     display: flex;
     flex-direction: column;
     position: relative;
 
-    &-control{
-        background-color: transparent;
-        border: 0;
-        outline: 0;
-        border-bottom:2px solid $color-secondary;
-        padding: 5px;
-        margin-bottom: 20px;
-        caret-color: $color-secondary;
-        color: $color-secondary;
+    &-group {
+        position: relative;
+        padding: 20px 0;
+        max-width: 100%;
 
-        &::placeholder{
+        input,
+        textarea {
+            border: none;
+            border-bottom: 1px solid $color-secondary;
             color: $color-secondary;
+            display: block;
+            font-size: 16px;
+            padding: 10px 0;
+            width: 100%;
+            background: transparent;
+
+            &:valid,
+            &:focus {
+                border-bottom-color: $color-red;
+                outline: none;
+
+
+                &+label {
+                    color: $color-red;
+                    font-size: 14px;
+                    transform: translateY(0);
+                }
+            }
         }
 
-        &:focus::placeholder{
-            color: transparent;
+        label {
+            color: $color-secondary;
+            font-size: 16px;
+            font-weight: 100;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            transform: translateY(30px);
+            transition: all 0.2s ease-in-out;
         }
     }
 
-    &-btn{
+    &-btn {
         padding: 10px 46px;
         border: none;
         background-color: $color-red;
         border-radius: 100px;
         max-width: 50%;
         position: absolute;
-        bottom:30px;
+        bottom: 30px;
         right: 0;
         transition: all 0.5s ease-in-out;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
-            background-color:$color-secondary;
+            background-color: $color-secondary;
             color: $color-red;
         }
 
-        @include viewport-md{
+        @include viewport-md {
             max-width: 70%;
         }
     }

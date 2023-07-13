@@ -98,7 +98,7 @@
 }
 
 .nav_main-list--mobile {
-    @include flex(start,center,column);
+    @include flex(flex-start,center,column);
     background: $color-primary;
     @include size(0,100vh);
     color: $color-secondary;
