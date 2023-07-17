@@ -27,7 +27,7 @@ module.exports = {
           },
           // Translates CSS into CommonJS
           "css-loader",
-          //   for adding cssnano,autoprefix and ruckcss
+          //   for adding autoprefix
           "postcss-loader",
           // Compiles Sass to CSS
           "sass-loader",
@@ -53,7 +53,7 @@ module.exports = {
       template: "src/index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "./css/style.css",
+      filename: "css/style.css",
     }),
   ],
   output: {
