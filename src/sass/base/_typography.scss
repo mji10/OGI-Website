@@ -23,7 +23,7 @@
 
         @include viewport-sm{
             @include font($heading-sm,null,null);
-            text-align: center;
+            text-align: start;
         }
     }
 
@@ -80,5 +80,10 @@
     &-sm-medium-grey{
         @include font($txt-sm,$color-medium-grey,null);
         line-height: 26px;
+
+
+    @include viewport-sm{
+        line-height: 15px;
+    }
     }
 }

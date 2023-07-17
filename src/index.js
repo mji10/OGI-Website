@@ -1,5 +1,3 @@
-// import "./sass/base/_typography.scss";
-// import "./sass/base/_fonts.scss";
 import "./sass/style.scss";
 
 function navbar() {
@@ -24,7 +22,7 @@ function burgerMenu() {
 }
 
 // Heading Animation
-function headAni() {
+function headerAnimation() {
   const heading = document.querySelector("#heading");
 
   function triggerAnimationSequence(element) {
@@ -38,12 +36,14 @@ function headAni() {
       let attr = document.createAttribute("data-animate");
 
       span.setAttributeNode(attr);
+      console.log(span.setAttributeNode(attr));
       span.innerHTML = letter;
+      console.log(letter);
       span.style.transitionDelay = `${delay}ms`;
       element.appendChild(span);
 
       void span.offsetWidth;
-      console.log(span.offsetWidth);
+      // console.log(span.offsetWidth);
       span.classList.add("animated");
       delay += 70;
     });
@@ -54,7 +54,7 @@ function headAni() {
   }, 100);
 }
 
-function lazyLoad() {
+function lazyLoadImages() {
   const images = document.querySelectorAll("[data-src]");
   const imageObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -82,9 +82,60 @@ function lazyLoad() {
   }
 }
 
+// Timeline
+function timeLine() {
+  const progressLine = document.querySelector(".progress_content");
+  const textContent = document.querySelector(".timeline_right");
+
+  console.log(textContent.children.length);
+
+  const classes = [
+    "go",
+    "occasion-one",
+    "occasion-two",
+    "occasion-three",
+    "occasion-four",
+  ];
+
+  console.log(classes.length);
+
+  console.log("Modulo Concept:" + (3 % 10));
+  let counter = 0;
+
+  if (progressLine) {
+    progressLine.classList.add("go");
+    textContent.classList.add("go");
+  }
+
+  setInterval(() => {
+    counter = (counter + 1) % classes.length;
+
+    console.log(counter);
+
+    // Remove All classes
+    progressLine.classList.remove(...classes);
+    // console.log([...classes]);
+
+    // Add classes name which is equal to counter length.
+    progressLine.classList.add(classes[counter]);
+
+    // The output will be classes[0];
+    console.log(classes[counter]);
+
+    if (progressLine.classList.contains(classes[counter])) {
+      // Remove All classes
+      textContent.classList.remove(...classes);
+
+      // Add classes name which is equal to counter length.
+      textContent.classList.add(classes[counter]);
+    }
+  }, 7000);
+}
+
 window.addEventListener("load", function () {
   navbar();
   burgerMenu();
-  headAni();
-  lazyLoad();
+  headerAnimation();
+  lazyLoadImages();
+  timeLine();
 });

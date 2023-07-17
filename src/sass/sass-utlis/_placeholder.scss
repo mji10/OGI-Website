@@ -2,64 +2,101 @@
 %burger-menu-lines {
     content: "";
     background: $color-primary;
-    @include size(32px,4px);
+    @include size(32px, 4px);
     display: block;
-    @include position(absolute,null,null,null,0);
+    @include position(absolute, null, null, null, 0);
     transition: all ease 0.2s;
 }
 
 // parallex Effect
-%onTop{
+%onTop {
     position: relative;
     z-index: 1;
 }
 
 // Section placeholder
-%section-bg{
+%section-bg {
     min-height: 700px;
-    @include flex(center,center,null);
+    @include flex(center, center, null);
     position: relative;
-    // opacity: 0;
 
-    .heading{
-        margin-bottom:55px
+    .heading {
+        margin-bottom: 55px
     }
 
-    .content{
+    .content {
         max-width: 40%;
 
-        @include viewport-sm{
-            max-width:100%;
-            margin:10px 0;
+        @include viewport-sm {
+            max-width: 100%;
+            margin: 10px 0;
         }
     }
 
-    .img{
+    .img {
         position: absolute;
         top: 0;
         right: 0;
-        @include size(50%,100%);
+        @include size(50%, 100%);
         object-fit: cover;
         opacity: 0;
 
-        @include viewport-sm{
-            position:static;
+        @include viewport-sm {
+            position: static;
             width: 100%;
             height: 100%;
         }
     }
 
-    @include viewport-sm{
+    @include viewport-sm {
         min-height: 620px;
-        @include flex(space-between,center,column);
+        @include flex(space-between, center, column);
 
-        .heading{
+        .heading {
             margin: 28px 0;
         }
 
-        .content{
+        .content {
             max-width: 100%;
             text-align: center;
         }
     }
+}
+
+// timeline Line Before
+%timeline-child-before {
+    content: "";
+    display: block;
+    @include size(4px, 0);
+    @include position(absolute, 0, -11px);
+    background-color: $color-red;
+    z-index: -1;
+    transition: 5s;
+}
+
+// circle Animation Border Color
+%border-red-animation {
+    border: 4px solid $color-red;
+}
+
+%border-grey-animation {
+    border: 4px solid $color-grey;
+    animation-name: circle;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+}
+
+// Timeline Text Animation Font Color
+%font-animated-color {
+    color: $color-red;
+    font-weight: bold;
+    transition: all 5s ease-in-out;
+}
+
+// Text Content Slide-in Left Animation
+%text-slide-animation {
+    display: block;
+    animation: slide 7s;
+
 }
