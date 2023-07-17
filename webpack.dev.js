@@ -36,13 +36,13 @@ module.exports = {
 
       //   Loading images
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpg|gif|svg)$/i,
         type: "asset/resource",
       },
 
       {
-        test: /\.html$/,
-        use: ["html-loader"],
+        test: /\.html$/i,
+        use: [{ loader: "html-loader" }],
       },
     ],
   },
@@ -59,6 +59,6 @@ module.exports = {
   output: {
     filename: "js/main.js",
     path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "images/[name][ext]",
+    assetModuleFilename: "images/[name][ext][query]",
   },
 };
