@@ -8,8 +8,8 @@
         padding: 20px 0;
         max-width: 100%;
 
-        input,
-        textarea {
+        .form-input,
+        .form-textarea {
             border: none;
             border-bottom: 1px solid $color-secondary;
             display: block;
@@ -23,14 +23,14 @@
                 outline: none;
 
 
-                &+label {
+                &+.form-label {
                     color: $color-red;
                     transform: translateY(0);
                 }
             }
         }
 
-        label {
+        .form-label {
             color: $color-secondary;
             font-weight: 100;
             @include position(absolute,0,null,null,0);

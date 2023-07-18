@@ -32,7 +32,7 @@
 
         @include viewport-md{
             @include font($txt-lg,null,null);
-            text-align: center;
+            text-align: start;
         }
 
         @include viewport-sm{
@@ -68,6 +68,23 @@
             
         }
     }
+    &-md-medium-grey{
+        @include font($txt-md,$color-medium-grey,null);
+
+        @include viewport-sm{
+            @include font($txt-f10,$color-medium-grey,null);
+            
+        }
+    }
+    &-md-primary{
+        @include font($txt-md,$color-primary,null);
+
+
+        @include viewport-sm{
+            @include font($txt-f10,$color-primary,null);
+            
+        }
+    }
     &-sm{
         @include font($txt-sm,$color-secondary,null);
         line-height: 25px;
@@ -77,13 +94,14 @@
         }
     }
 
-    &-sm-medium-grey{
-        @include font($txt-sm,$color-medium-grey,null);
+    &-sm-grey{
+        @include font($txt-sm,$color-grey,null);
         line-height: 26px;
 
 
     @include viewport-sm{
-        line-height: 15px;
+        @include font($txt-f12,$color-grey,null);
+        line-height: 18px;
     }
     }
 }

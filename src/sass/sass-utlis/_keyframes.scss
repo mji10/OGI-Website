@@ -1,5 +1,5 @@
 // Slide-in Left animation
-@keyframes slide {
+@keyframes slide-Left {
     0% {
         transform: translateX(200%);
     }
@@ -21,8 +21,8 @@
     }
 }
 
-// Circle Animation
-@keyframes circle {
+// Circle Border Animation
+@keyframes circle-border {
     0% {
         border: 4px solid grey;
         transform: rotate(-180deg);

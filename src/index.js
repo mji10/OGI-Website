@@ -27,7 +27,6 @@ function headerAnimation() {
 
   function triggerAnimationSequence(element) {
     const lettersArray = element.innerHTML.split("");
-    console.log(lettersArray);
     let delay = 0;
 
     element.innerHTML = "";
@@ -36,14 +35,11 @@ function headerAnimation() {
       let attr = document.createAttribute("data-animate");
 
       span.setAttributeNode(attr);
-      console.log(span.setAttributeNode(attr));
       span.innerHTML = letter;
-      console.log(letter);
       span.style.transitionDelay = `${delay}ms`;
       element.appendChild(span);
 
       void span.offsetWidth;
-      // console.log(span.offsetWidth);
       span.classList.add("animated");
       delay += 70;
     });
@@ -87,8 +83,6 @@ function timeLine() {
   const progressLine = document.querySelector(".progress_content");
   const textContent = document.querySelector(".timeline_right");
 
-  console.log(textContent.children.length);
-
   const classes = [
     "go",
     "occasion-one",
@@ -97,9 +91,6 @@ function timeLine() {
     "occasion-four",
   ];
 
-  console.log(classes.length);
-
-  console.log("Modulo Concept:" + (3 % 10));
   let counter = 0;
 
   if (progressLine) {
@@ -110,17 +101,13 @@ function timeLine() {
   setInterval(() => {
     counter = (counter + 1) % classes.length;
 
-    console.log(counter);
 
     // Remove All classes
     progressLine.classList.remove(...classes);
-    // console.log([...classes]);
 
     // Add classes name which is equal to counter length.
     progressLine.classList.add(classes[counter]);
 
-    // The output will be classes[0];
-    console.log(classes[counter]);
 
     if (progressLine.classList.contains(classes[counter])) {
       // Remove All classes
