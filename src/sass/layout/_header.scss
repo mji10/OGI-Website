@@ -52,6 +52,7 @@
     cursor: pointer;
     background: transparent;
     border: 0;
+    padding:0;
     display: none;
 
     &-lines{
@@ -75,7 +76,7 @@
 
 .none{
     display: none
-  }
+}
 
 @media (min-width: 0px) and (max-width: 1024px) {
 .nav-desk{
@@ -137,7 +138,7 @@
   }
 }
 
-  // Scroll Background
+  // On-Scroll Navbar Background
   .nav-active {
     background-color: $color-primary;
     color:$color-secondary;

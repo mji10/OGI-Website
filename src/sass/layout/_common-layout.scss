@@ -39,14 +39,12 @@ body {
             opacity: 0;
             animation: 5s textShow 2s ease-in 1;
             animation-fill-mode: forwards;
-            // animation-duration:5s
         }
     }
 }
 
 [data-animate] {
     opacity: 0;
-    // will-change: auto;
 }
 
 .animated {
@@ -63,114 +61,6 @@ body {
         color: $color-secondary;
     }
 }
-
-
-// Services Section
-.services {
-    @extend %onTop;
-    padding: 140px 0;
-
-    &_head {
-        text-align: center;
-        margin-bottom: 80px;
-
-        @include viewport-sm {
-            margin-bottom: 40px;
-        }
-    }
-
-    &_wrapper {
-        display: flex;
-        width: 100%;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-
-    &_list {
-        width: calc((100% / 3) - 45px);
-        margin-bottom: 70px;
-
-        &-img {
-            opacity: 0;
-        }
-
-        &-head {
-            margin: 20px 0 16px 0;
-        }
-
-
-        &:nth-last-child(-n+3) {
-            margin-bottom: 0;
-        }
-
-
-        @include viewport-sm {
-            width: 100%;
-            margin-bottom: 35px !important;
-
-            &:last-child {
-                margin-bottom: 0 !important;
-            }
-        }
-    }
-
-    @include viewport-sm {
-        padding: 70px 0;
-    }
-}
-
-.hiring {
-    @extend %onTop;
-    @extend %section-bg;
-
-    &_content-img {
-        @include position(absolute, 0, null, null, 0);
-    }
-}
-
-// Contact us
-.contact {
-    @extend %onTop;
-    @extend %section-bg;
-
-    .map-responsive {
-        opacity: 0;
-        @include position(absolute, 0, 0);
-        @include size(50%,700px);
-
-        @include viewport-sm {
-            @include position(static);
-            @include size(100%,500px);
-        }
-    }
-}
-
-.contact iframe.fadeIn {
-    opacity: 1;
-    transition: all 0.5s ease-in-out;
-}
-
-.fadeIn {
-    opacity: 1 !important;
-    transition: all 0.5s ease-in-out;
-}
-
-.ml-auto {
-    margin-left: auto;
-}
-
-// Animation
-@keyframes textShow {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
 
 // Timeline
 .timeline {
@@ -484,10 +374,103 @@ body {
     }
 }
 
-    .d-none {
-        display: none;
+
+// Services Section
+.services {
+    @extend %onTop;
+    padding: 140px 0;
+
+    &_head {
+        text-align: center;
+        margin-bottom: 80px;
+
+        @include viewport-sm {
+            margin-bottom: 40px;
+        }
     }
 
-    .overflow-hidden{
+    &_wrapper {
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    &_list {
+        width: calc((100% / 3) - 45px);
+        margin-bottom: 70px;
+
+        &-img {
+            opacity: 0;
+        }
+
+        &-head {
+            margin: 20px 0 16px 0;
+        }
+
+
+        &:nth-last-child(-n+3) {
+            margin-bottom: 0;
+        }
+
+
+        @include viewport-sm {
+            width: 100%;
+            margin-bottom: 35px !important;
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+
+    @include viewport-sm {
+        padding: 70px 0;
+    }
+}
+
+.hiring {
+    @extend %onTop;
+    @extend %section-bg;
+
+    &_content-img {
+        @include position(absolute, 0, null, null, 0);
+    }
+}
+
+// Contact us
+.contact {
+    @extend %onTop;
+    @extend %section-bg;
+
+    .map-responsive {
+        opacity: 0;
+        @include position(absolute, 0, 0);
+        @include size(50%,700px);
+
+        @include viewport-sm {
+            @include position(static);
+            @include size(100%,500px);
+        }
+    }
+}
+
+.contact iframe.fadeIn {
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.fadeIn {
+    opacity: 1 !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.ml-auto {
+    margin-left: auto;
+}
+ .d-none {
+        display: none;
+    }
+ .overflow-hidden{
         overflow: hidden;
     }
