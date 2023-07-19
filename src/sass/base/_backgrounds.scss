@@ -1,14 +1,14 @@
 .bc{
 
-    &_primary{
+    &-primary{
         background-color: $color-primary;
     }
 
-    &_secondary{
+    &-secondary{
         background-color: $color-secondary;
     }
 
-    &_tertiary{
+    &-tertiary{
         background-color: $color-light-grey;
     }
 }

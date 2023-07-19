@@ -1,7 +1,7 @@
 import "./sass/style.scss";
 
 function navbar() {
-  const navbar = document.querySelector(".navigation");
+  const navbar = document.querySelector(".header");
   window.onscroll = () => {
     if (window.scrollY > 100) {
       navbar.classList.add("nav-active");
@@ -23,35 +23,22 @@ function burgerMenu() {
 
 // Heading Animation
 function headerAnimation() {
-  const heading = document.querySelector("#heading");
+  let text = document.getElementById("heading");
+  let letters = text.textContent.split("");
+  text.textContent = "";
 
-  function triggerAnimationSequence(element) {
-    const lettersArray = element.innerHTML.split("");
-    let delay = 0;
-
-    element.innerHTML = "";
-    lettersArray.forEach((letter) => {
-      let span = document.createElement("SPAN");
-      let attr = document.createAttribute("data-animate");
-
-      span.setAttributeNode(attr);
-      span.innerHTML = letter;
-      span.style.transitionDelay = `${delay}ms`;
-      element.appendChild(span);
-
-      void span.offsetWidth;
-      span.classList.add("animated");
-      delay += 70;
-    });
+  for (let i = 0; i < letters.length; i++) {
+    let span = document.createElement("span");
+    span.textContent = letters[i];
+    span.classList.add("letter-fade");
+    span.style.animationDelay = i * 0.1 + "s"; // Delay each letter by 0.1s
+    text.appendChild(span);
   }
-
-  setTimeout(() => {
-    triggerAnimationSequence(heading);
-  }, 100);
 }
 
 function lazyLoadImages() {
   const images = document.querySelectorAll("[data-src]");
+  console.log(images);
   const imageObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -62,7 +49,7 @@ function lazyLoadImages() {
         }
       });
     },
-    { threshold: 0.5 }
+    { threshold: 1 }
   );
 
   images.forEach((image) => {
@@ -75,8 +62,43 @@ function lazyLoadImages() {
       return;
     }
     img.src = src;
+    console.log(src)
   }
+  
 }
+
+function loadSvg(){
+function lazyLoad(entries, observer) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      const svg = entry.target;
+      const svgUse = svg.querySelector('use');
+      console.log(svgUse);
+      const spriteSrc = svgUse.getAttribute('href');
+      console.log(spriteSrc);
+      svgUse.setAttribute('href', spriteSrc);
+      entry.target.classList.add("fadeIn");
+      observer.unobserve(svg);
+    }
+  });
+}
+
+const observer = new IntersectionObserver(lazyLoad, { threshold: 1 });
+
+const lazySvgElements = document.querySelectorAll('.lazy-svg');
+Array.from(lazySvgElements).forEach((element) => {
+  observer.observe(element);
+});
+}
+
+// document.addEventListener('DOMContentLoaded', () => {
+//   const lazyLoadTriggers = document.querySelectorAll('.lazy-svg');
+//   Array.from(lazyLoadTriggers).forEach((trigger) => {
+//     observer.observe(trigger);
+//   });
+// });
+
+
 
 // Timeline
 function timeLine() {
@@ -101,13 +123,11 @@ function timeLine() {
   setInterval(() => {
     counter = (counter + 1) % classes.length;
 
-
     // Remove All classes
     progressLine.classList.remove(...classes);
 
     // Add classes name which is equal to counter length.
     progressLine.classList.add(classes[counter]);
-
 
     if (progressLine.classList.contains(classes[counter])) {
       // Remove All classes
@@ -124,5 +144,6 @@ window.addEventListener("load", function () {
   burgerMenu();
   headerAnimation();
   lazyLoadImages();
+  loadSvg();
   timeLine();
 });

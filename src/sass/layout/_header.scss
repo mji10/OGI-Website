@@ -1,4 +1,4 @@
-.navigation {
+.header {
     position: fixed;
     @include size(100%,70px);
     z-index: 2;
@@ -25,7 +25,7 @@
 
             .nav-links {
                 display: block;
-                padding: 10px 20px;
+                margin:10px 0 10px 20px;
                 color: $color-primary;
                 text-decoration: none;
                 font-weight: normal;
@@ -74,20 +74,12 @@
     }
 }
 
-.none{
-    display: none
-}
 
 @media (min-width: 0px) and (max-width: 1024px) {
-.nav-desk{
+.desktop-d-none{
     display: none;
 }
-
 .burger_menu{
-    display: block;
-}
-
-.none{
     display: block;
 }
 
@@ -115,6 +107,12 @@
     color: $color-secondary;
     text-decoration: none;
 }
+}
+
+@media screen and (min-width: 1025px) {
+    .mobile-d-none{
+        display: none;
+    }
 }
 
 .mob_nav.show , .mob_nav.show .nav_main-list--mobile{

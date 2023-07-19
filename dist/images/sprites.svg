@@ -1,0 +1,8 @@
+export default {
+      id: "sprites-usage",
+      viewBox: "0 0 0 0",
+      url: __webpack_public_path__ + "C:\\Users\\HP\\Desktop\\Full_creative_intern\\OGI-Website\\src\\images\\sprites.svg",
+      toString: function () {
+        return this.url;
+      }
+    }
