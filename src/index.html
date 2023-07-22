@@ -41,7 +41,8 @@
             <div class="brand">
                 <a href="javascript:void(0)" class="brand_logo txt-lg">Company Name</a>
                 <nav class="nav_main">
-                    <button class="burger_menu"><span class="burger_menu-lines"></span></button>
+                    <button class="burger_menu" aria-label="hamburger-menu OGI-website"><span
+                            class="burger_menu-lines"></span></button>
                     <ul class="nav_main-list desktop-d-none">
                         <li class="nav_main-list--items"><a href="javascript:void(0)" class="nav-links">Home</a></li>
                         <li class="nav_main-list--items"><a href="javascript:void(0)" class="nav-links">About Us</a>
@@ -357,15 +358,16 @@
                         <h2 class="hiring_head heading-sm-secondary heading">Contact Us</h2>
                         <form action="javascript:void(0)" class="form">
                             <div class="form-group txt-sm-secondary">
-                                <input class="txt-sm form-input" type="text" required />
-                                <label class="txt-sm form-label" for="name">Name</label>
+                                <input class="txt-sm form-input" type="text" name="username" id="username" required />
+                                <label class="txt-sm form-label" for="username">Name</label>
                             </div>
                             <div class="form-group txt-sm-secondary">
-                                <input class="txt-sm form-input" type="text" required />
+                                <input class="txt-sm form-input" type="text" name="email" id="email" required />
                                 <label class="txt-sm form-label" for="email">Email</label>
                             </div>
                             <div class="form-group txt-sm-secondary">
-                                <textarea cols="30" rows="10" required class="txt-sm form-textarea"></textarea>
+                                <textarea cols="30" rows="10" class="txt-sm form-textarea" name="message" id="message"
+                                    required></textarea>
                                 <label class="txt-sm form-label" for="message">Message</label>
                             </div>
 
@@ -376,8 +378,8 @@
             </div>
             <iframe
                 data-src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15551.134421344355!2d80.246061!3d12.985688!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d63755621af%3A0x9ad72f78a113f1da!2sFull%20Creative!5e0!3m2!1sen!2sin!4v1688981113784!5m2!1sen!2sin"
-                style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"
-                class="map-responsive"></iframe>
+                style="border:0;" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" class="map-responsive"
+                title="Company-Location"></iframe>
         </section>
     </main>
 </body>
