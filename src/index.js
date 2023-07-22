@@ -49,7 +49,7 @@ function lazyLoadImages() {
         }
       });
     },
-    { threshold: 1 }
+    { threshold: 0.5 }
   );
 
   images.forEach((image) => {
